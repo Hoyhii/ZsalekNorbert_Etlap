@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.etlap.controllers.AddController">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="120.0" prefWidth="220.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="30.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="30.0" prefHeight="130.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="30.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="30.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="30.0" prefHeight="32.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <TextField fx:id="inputNev" promptText="Név" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin></TextField>
+        <Label text="Név" />
+        <Label text="Leírás" GridPane.rowIndex="1" />
+        <Label text="Kategória" GridPane.rowIndex="2" />
+        <Label text="Ár" GridPane.rowIndex="3" />
+        <Spinner fx:id="inputAr" editable="true" minWidth="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="10" initialValue="100" max="1000000" min="1" />
+            </valueFactory>
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin>
+        </Spinner>
+        <Button minWidth="100.0" mnemonicParsing="false" onAction="#onAdd" prefHeight="26.0" prefWidth="315.0" text="Hozzáadás" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </GridPane.margin></Button>
+      <TextArea fx:id="inputLeiras" prefHeight="200.0" prefWidth="200.0" promptText="Leírás" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin></TextArea>
+        <ComboBox fx:id="inputKategoria" prefHeight="25.0" prefWidth="207.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="5.0" />
+         </GridPane.margin></ComboBox>
+    </children>
+</GridPane>
